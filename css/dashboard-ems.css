@@ -1,0 +1,107 @@
+body {
+    background: #f4f7fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ems-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.ems-header {
+    background: #1a365d;
+    color: #fff;
+    padding: 24px 40px 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.ems-header .logo {
+    font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.ems-header .user-info {
+    font-size: 1.1em;
+}
+
+.ems-main {
+    display: flex;
+    flex: 1;
+    padding: 32px 40px;
+    gap: 32px;
+}
+
+.ems-sidebar {
+    width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 180px;
+}
+.ems-sidebar a {
+    color: #1a365d;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 0;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+.ems-sidebar a.active, .ems-sidebar a:hover {
+    background: #e6f0ff;
+}
+
+.ems-content {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 32px 28px;
+    min-width: 0;
+}
+
+.units-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+.units-table th, .units-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e6ef;
+    text-align: left;
+}
+.units-table th {
+    background: #f4f7fa;
+    color: #1a365d;
+    font-size: 1.05em;
+}
+.units-table td.status-offline {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.units-table td.status-live {
+    color: #1bbf4c;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .ems-main {
+        flex-direction: column;
+        padding: 18px 6vw;
+        gap: 18px;
+    }
+    .ems-sidebar {
+        width: 100%;
+        flex-direction: row;
+        gap: 10px;
+        padding: 12px 8px;
+    }
+}

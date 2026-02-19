@@ -1,18 +1,45 @@
+.input-field {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 11px 12px;
+    font-size: 1em;
+    border: 1px solid #d0d6e0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    transition: border 0.2s;
+}
+.input-field:focus {
+    border: 1.5px solid #0057ff;
+    outline: none;
+}
 /* Auth0 login styles for FLEH */
 body {
-    background: #f4f7fa;
+    background: #f4f7fa url('../images/mi1.jpg') no-repeat center center fixed;
+    background-size: cover;
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .login-container {
-    max-width: 400px;
-    margin: 60px auto;
+    max-width: 520px;
+    width: 100%;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    padding: 40px 30px 30px 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    padding: 48px 38px 38px 38px;
     text-align: center;
+}
+.login-logo {
+    width: 140px;
+    height: auto;
+    margin-bottom: 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 .login-container h2 {
     margin-bottom: 24px;
@@ -30,4 +57,52 @@ body {
 }
 .auth0-btn:hover {
     background: #003eaa;
+}
+
+.dashboard-card {
+    max-width: 480px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    padding: 40px 32px 32px 32px;
+    text-align: left;
+}
+.dashboard-card h2 {
+    color: #1a365d;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.dashboard-status {
+    margin-bottom: 18px;
+    font-size: 1.1em;
+}
+.status-label {
+    color: #888;
+    font-weight: 500;
+}
+.status-active, .status-enabled {
+    color: #1bbf4c;
+    font-weight: bold;
+}
+.dashboard-section h4 {
+    margin: 0 0 8px 0;
+    color: #0057ff;
+    font-size: 1.08em;
+}
+.dashboard-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    color: #333;
+    font-size: 0.98em;
+}
+.unit-offline {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.unit-live {
+    color: #1bbf4c;
+    font-weight: bold;
+}
 }

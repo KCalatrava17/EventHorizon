@@ -24,7 +24,7 @@ if ($AUTH0_DOMAIN === 'YOUR_AUTH0_DOMAIN' || $AUTH0_CLIENT_ID === 'YOUR_AUTH0_CL
             exit;
         }
     }
-    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Demo Login</title><link rel="stylesheet" href="css/login.css"></head><body><div class="login-container"><h2>Demo Login</h2><form method="post"><input type="text" name="name" placeholder="Your Name" style="width:100%;margin-bottom:12px;padding:10px;font-size:1em;" required><select name="org_type" style="width:100%;margin-bottom:16px;padding:10px;font-size:1em;" required><option value="">Select Organization Type</option><option value="ems">EMS Agency</option><option value="hospital">Hospital System</option></select><button class="auth0-btn" type="submit">Login (Demo)</button></form></div></body></html>';
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Demo Login</title><link rel="stylesheet" href="css/login.css"></head><body><div class="dashboard-card"><h2>Demo Login</h2><form method="post"><input type="text" name="name" placeholder="Your Name" class="input-field" required><select name="org_type" class="input-field" required><option value="">Select Organization Type</option><option value="ems">EMS Agency</option><option value="hospital">Hospital System</option></select><button class="auth0-btn" type="submit">Login (Demo)</button></form></div></body></html>';
     exit;
 }
 
