@@ -9,6 +9,11 @@
     background: #f8fafc;
     transition: border 0.2s;
 }
+
+/* Add margin-top to username field when local login is selected */
+.input-field-top {
+    margin-top: 14px;
+}
 .input-field:focus {
     border: 1.5px solid #0057ff;
     outline: none;
@@ -57,6 +62,19 @@ body {
 }
 .auth0-btn:hover {
     background: #003eaa;
+}
+
+/* Add spacing below login type select when local login is selected */
+.input-field-spacer {
+    height: 14px;
+}
+}
+
+/* Selected login type button */
+.auth0-btn.selected {
+    background: #003eaa;
+    box-shadow: 0 0 0 2px #0057ff33;
+}
 }
 
 .dashboard-card {

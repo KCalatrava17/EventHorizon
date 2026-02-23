@@ -64,17 +64,50 @@ if ($AUTH0_DOMAIN === 'YOUR_AUTH0_DOMAIN' || $AUTH0_CLIENT_ID === 'YOUR_AUTH0_CL
 					   <?= htmlspecialchars($login_error) ?>
 				   </div>
 			   <?php endif; ?>
-			   <form method="post">
-				   <input type="text" name="username" placeholder="Username" class="input-field" required>
+			   <div id="login-selection">
+				   <select id="login-type-select" class="input-field" style="width:100%;">
+					   <option value="">Select Login Type</option>
+					   <option value="local">Local Login</option>
+					   <option value="hospital">Hospital Account</option>
+				   </select>
+			   </div>
+			   <form method="post" id="local-login-form" style="display:none;">
+				   <input type="text" name="username" placeholder="Username" class="input-field input-field-top" required>
 				   <input type="password" name="password" placeholder="Password" class="input-field" required>
-				   <select name="org_type" class="input-field" required>
-					   <option value="">Select Organization Type</option>
+				   <select name="org_type" id="org-type-select" class="input-field" required>
+					   <option value="">Select Organization</option>
 					   <option value="ems">EMS Agency</option>
 					   <option value="hospital">Hospital System</option>
 				   </select>
 				   <button class="auth0-btn" type="submit">Login</button>
 			   </form>
+			   <div id="hospital-login-form" style="display:none;">
+				   <form method="post" action="auth0-login.php">
+					   <input type="hidden" name="org_type" value="hospital">
+					   <button class="auth0-btn" type="submit">Login with Hospital Account</button>
+				   </form>
+			   </div>
 		   </div>
+		   <script src="js/login.js"></script>
+		   <script>
+		   document.addEventListener('DOMContentLoaded', function() {
+			   const loginType = document.getElementById('login-type-select');
+			   const localForm = document.getElementById('local-login-form');
+			   const hospitalForm = document.getElementById('hospital-login-form');
+			   loginType.addEventListener('change', function() {
+				   if (loginType.value === 'local') {
+					   localForm.style.display = 'block';
+					   hospitalForm.style.display = 'none';
+				   } else if (loginType.value === 'hospital') {
+					   localForm.style.display = 'none';
+					   hospitalForm.style.display = 'block';
+				   } else {
+					   localForm.style.display = 'none';
+					   hospitalForm.style.display = 'none';
+				   }
+			   });
+		   });
+		   </script>
 	</body>
 	</html>
 	<?php
